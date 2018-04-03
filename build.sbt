@@ -1,4 +1,4 @@
-name := """edukacja2-v1"""
+name := """place-placer"""
 
 version := "1.0-SNAPSHOT"
 
