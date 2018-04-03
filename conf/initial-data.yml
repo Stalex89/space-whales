@@ -1,0 +1,12 @@
+tags:
+    - !!models.Tag
+        id: 1
+        name: English
+
+    - !!models.Tag
+        id: 2
+        name: German
+
+    - !!models.Tag
+        id: 3
+        name: Spanish

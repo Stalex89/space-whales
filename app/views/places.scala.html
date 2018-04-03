@@ -1,0 +1,63 @@
+@(places: List[Place])
+@main("Places") {
+    <script>
+            function incr(url, id) {
+                $.ajax({
+                    url: url, type: 'POST', success: function (results) {
+                        $('#rating-' + id).text(results)
+                    }
+                });
+            }
+
+            function decr(url, id) {
+                console.log("decr")
+                $.ajax({
+                    url: url, 
+                    type: 'POST',
+                    success: function (results) {
+                        $('#rating-' + id).text(results)
+                    },
+                    error: function (err) {
+                        console.log(err)
+                    }
+                });
+            }
+    </script>
+    @if(places.length > 0) {
+        <h2>All places</h2>
+
+        <table class="table table-striped">
+            <thead>
+                <tr><th>Name</th><th>Country</th><th>Rating</th><th></th></tr>
+            </thead>
+            <tbody>
+            @for(place <- places) {
+                <tr>
+                    <td>
+                        @place.name
+                    </td>
+                    <td>
+                        @place.country
+                    </td>
+                    <td>
+                        <i class="pr-2" id="rating-@place.id">@place.rating </i>
+                        <button class="btn btn-sm btn-success" onclick="javascript:incr('@routes.PlaceController.incrRating(place)', @place.id)">+</button>
+                        <button class="btn btn-sm btn-danger" onclick="javascript:decr('@routes.PlaceController.decrRating(place)', @place.id)">-</button>
+                    </td>
+                    <td>
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#detailsModal-@place.id">
+                            Show Details
+                            </button>
+                            @details(place)
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    } else {
+        <h2>No places yet :(</h2>
+        <hr class="my-4">
+        <p>Be the first one, share your favourite place with the world!</p>
+    }
+    <a href="@routes.PlaceController.addPlace()" class="btn btn-info"><i class="fas fa-plus-square"></i> Add your place</a>
+}
