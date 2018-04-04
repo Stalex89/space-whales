@@ -19,7 +19,7 @@ libraryDependencies ++= Seq(
   "org.webjars" % "jquery" % "3.3.1-1",
   "org.webjars" % "font-awesome" % "5.0.6",
   "com.h2database" % "h2" % "1.4.192",
-  "com.adrianhurt" %% "play-bootstrap" % "1.4-P26-B4-SNAPSHOT"
+  "com.adrianhurt" %% "play-bootstrap" % "1.4-P26-B4-SNAPSHOT",
   "org.postgresql" % "postgresql" % "9.4-1201-jdbc41"
 )
 
