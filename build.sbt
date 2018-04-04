@@ -20,6 +20,7 @@ libraryDependencies ++= Seq(
   "org.webjars" % "font-awesome" % "5.0.6",
   "com.h2database" % "h2" % "1.4.192",
   "com.adrianhurt" %% "play-bootstrap" % "1.4-P26-B4-SNAPSHOT"
+  "org.postgresql" % "postgresql" % "9.4-1201-jdbc41"
 )
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
