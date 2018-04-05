@@ -11,3 +11,4 @@ out
 RUNNING_PID
 *.db
 database
+.env

@@ -22,4 +22,3 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-less" % "1.1.2")
 // enablePlugins(SbtEbean). Note, uncommenting this line will automatically bring in
 // Play enhancer, regardless of whether the line above is commented out or not.
 addSbtPlugin("com.typesafe.sbt" % "sbt-play-ebean" % "4.1.0")
-

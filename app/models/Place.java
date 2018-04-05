@@ -12,7 +12,7 @@ import io.ebean.*;
 public class Place extends Model implements PathBindable<Place> {
     // persistence
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
     // validation
