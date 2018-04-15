@@ -42,6 +42,10 @@ public class PlaceController extends Controller {
         return ok(details.render(place));
     }
 
+    public Result about() {
+        return ok(about.render());
+    }
+
     public Result save() {
         Form<Place> placeForm = formFactory.form(Place.class).bindFromRequest();
         if (placeForm.hasErrors()) {

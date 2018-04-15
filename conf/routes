@@ -3,19 +3,20 @@
 # ~~~~
 
 # Home page
-GET     /               controllers.PlaceController.index()
-GET     /places/      controllers.PlaceController.places()
-GET     /places/add   controllers.PlaceController.addPlace()
-POST    /places/add      controllers.PlaceController.save()
-GET     /place/:id   controllers.PlaceController.details(id: models.Place)
-GET     /place/:id/edit   controllers.PlaceController.editPlace(id: models.Place)
-GET     /place/:id/picture   controllers.PlaceController.picture(id: models.Place)
+GET     /                           controllers.PlaceController.index()
+GET     /about                      controllers.PlaceController.about()
+GET     /places/                    controllers.PlaceController.places()
+GET     /places/add                 controllers.PlaceController.addPlace()
+POST    /places/add                 controllers.PlaceController.save()
+GET     /place/:id                  controllers.PlaceController.details(id: models.Place)
+GET     /place/:id/edit             controllers.PlaceController.editPlace(id: models.Place)
+GET     /place/:id/picture          controllers.PlaceController.picture(id: models.Place)
 
 +nocsrf
-POST    /place/:id/incrRating     controllers.PlaceController.incrRating(id: models.Place)
+POST    /place/:id/incrRating       controllers.PlaceController.incrRating(id: models.Place)
 
 +nocsrf
-POST    /place/:id/decrRating     controllers.PlaceController.decrRating(id: models.Place)
+POST    /place/:id/decrRating       controllers.PlaceController.decrRating(id: models.Place)
 
 +nocsrf
 DELETE  /place/:id   controllers.PlaceController.delete(id:Long)
