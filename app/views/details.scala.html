@@ -1,4 +1,4 @@
-@(place: Place)
+@(place: Place, isLoggedIn: Boolean)
 <div class="modal fade" id="detailsModal-@place.id" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel-@place.id" aria-hidden="true">
 <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -15,7 +15,9 @@
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        @if(isLoggedIn) {
         <a href="@routes.PlaceController.editPlace(place)" class="btn btn-info">Edit  <i class="fas fa-pencil-alt"></i></a>
+        }
     </div>
     </div>
 </div>

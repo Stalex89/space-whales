@@ -41,14 +41,16 @@
                     </td>
                     <td>
                         <i class="pr-2" id="rating-@place.id">@place.rating </i>
-                        <button class="btn btn-sm btn-success" onclick="javascript:incr('@routes.PlaceController.incrRating(place)', @place.id)">+</button>
-                        <button class="btn btn-sm btn-danger" onclick="javascript:decr('@routes.PlaceController.decrRating(place)', @place.id)">-</button>
+                        @if(isLoggedIn) {
+                            <button class="btn btn-sm btn-success" onclick="javascript:incr('@routes.PlaceController.incrRating(place)', @place.id)">+</button>
+                            <button class="btn btn-sm btn-danger" onclick="javascript:decr('@routes.PlaceController.decrRating(place)', @place.id)">-</button>
+                        }
                     </td>
                     <td>
                             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#detailsModal-@place.id">
                             Show Details
                             </button>
-                            @details(place)
+                            @details(place, isLoggedIn)
                     </td>
                 </tr>
             }
@@ -59,5 +61,7 @@
         <hr class="my-4">
         <p>Be the first one, share your favourite place with the world!</p>
     }
+    @if(isLoggedIn) {
     <a href="@routes.PlaceController.addPlace()" class="btn btn-info"><i class="fas fa-plus-square"></i> Add your place</a>
+    }
 }

@@ -32,11 +32,13 @@ public class PlaceController extends Controller
         return ok(places.render(allPlaces, Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
     }
 
+    @Security.Authenticated(Secured.class)
     public Result addPlace() 
     {
         return ok(add_edit_place.render(formFactory.form(Place.class).bindFromRequest(), Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
     }
 
+    @Security.Authenticated(Secured.class)
     public Result editPlace(Place place) 
     {
         Form<Place> filledForm = formFactory.form(Place.class).fill(place);
@@ -45,7 +47,7 @@ public class PlaceController extends Controller
 
     public Result details(Place place) 
     {
-        return ok(details.render(place));
+        return ok(details.render(place, Secured.isLoggedIn(ctx())));
     }
 
     public Result about() 
@@ -53,6 +55,7 @@ public class PlaceController extends Controller
         return ok(about.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
     }
 
+    @Security.Authenticated(Secured.class)
     public Result save() 
     {
         Form<Place> placeForm = formFactory.form(Place.class).bindFromRequest();
