@@ -12,6 +12,16 @@ GET     /place/:id                  controllers.PlaceController.details(id: mode
 GET     /place/:id/edit             controllers.PlaceController.editPlace(id: models.Place)
 GET     /place/:id/picture          controllers.PlaceController.picture(id: models.Place)
 
+GET     /login                      controllers.PlaceController.login()
+
++nocsrf
+POST    /login                      controllers.PlaceController.postLogin()
+GET     /profile                    controllers.PlaceController.profile()
+GET     /logout                     controllers.PlaceController.logout()
+
+
+
+
 +nocsrf
 POST    /place/:id/incrRating       controllers.PlaceController.incrRating(id: models.Place)
 

@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String, isLoggedIn: Boolean, userInfo: UserInfo)(content: Html)
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@
     </head>
     <body style="background-color: #c1d1fd;">
 
-        @navigation()
+        @navigation(isLoggedIn, userInfo)
 
         @if(flash.containsKey("success")) {
             <div class="alert alert-success">@flash.get("success")</div>

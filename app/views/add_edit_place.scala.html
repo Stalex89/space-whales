@@ -1,11 +1,10 @@
 @import helper._
 @import play.data._
 
-@(placeForm: Form[Place])
-
+@(placeForm: Form[Place], isLoggedIn: Boolean, userInfo: UserInfo)
 @implicitFieldConstructor = @{ b4.horizontal.fieldConstructor("col-md-2", "col-md-5") }
 
-@main("Place form") {
+@main("Place form", isLoggedIn, userInfo) {
     <script>
         function del(url) {
             $.ajax({
