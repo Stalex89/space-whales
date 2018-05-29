@@ -3,37 +3,43 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.PlaceController.index()
-GET     /about                      controllers.PlaceController.about()
-GET     /places/                    controllers.PlaceController.places()
-GET     /places/add                 controllers.PlaceController.addPlace()
-POST    /places/add                 controllers.PlaceController.save()
-GET     /place/:id                  controllers.PlaceController.details(id: models.Place)
-GET     /place/:id/edit             controllers.PlaceController.editPlace(id: models.Place)
-GET     /place/:id/picture          controllers.PlaceController.picture(id: models.Place)
 
-GET     /login                      controllers.PlaceController.login()
 
-+nocsrf
-POST    /login                      controllers.PlaceController.postLogin()
-GET     /profile                    controllers.PlaceController.profile()
-GET     /logout                     controllers.PlaceController.logout()
+GET     /                           controllers.HomeController.index
 
 
 
+#GET     /                           controllers.PlaceController.index()
+#GET     /about                      controllers.PlaceController.about()
+#GET     /places/                    controllers.PlaceController.places()
+#GET     /places/add                 controllers.PlaceController.addPlace()
+#POST    /places/add                 controllers.PlaceController.save()
+#GET     /place/:id                  controllers.PlaceController.details(id: models.Place)
+#GET     /place/:id/edit             controllers.PlaceController.editPlace(id: models.Place)
+#GET     /place/:id/picture          controllers.PlaceController.picture(id: models.Place)
 
-+nocsrf
-POST    /place/:id/incrRating       controllers.PlaceController.incrRating(id: models.Place)
+#GET     /login                      controllers.PlaceController.login()
 
-+nocsrf
-POST    /place/:id/decrRating       controllers.PlaceController.decrRating(id: models.Place)
+#+nocsrf
+#POST    /login                      controllers.PlaceController.postLogin()
+#GET     /profile                    controllers.PlaceController.profile()
+#GET     /logout                     controllers.PlaceController.logout()
 
-+nocsrf
-DELETE  /place/:id   controllers.PlaceController.delete(id:Long)
+
+
+
+#+nocsrf
+#POST    /place/:id/incrRating       controllers.PlaceController.incrRating(id: models.Place)
+
+#+nocsrf
+#POST    /place/:id/decrRating       controllers.PlaceController.decrRating(id: models.Place)
+
+#+nocsrf
+#DELETE  /place/:id   controllers.PlaceController.delete(id:Long)
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file      controllers.Assets.at(path="/public", file)
-->      /webjars           webjars.Routes
+#GET     /assets/*file      controllers.Assets.at(path="/public", file)
+#->      /webjars           webjars.Routes
 
 
 # GET     /picture/:studId    controllers.Students.picture(studId:Long)

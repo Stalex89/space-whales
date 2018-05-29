@@ -1,24 +1,24 @@
-@(place: Place, isLoggedIn: Boolean)
-<div class="modal fade" id="detailsModal-@place.id" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel-@place.id" aria-hidden="true">
-<div class="modal-dialog" role="document">
-    <div class="modal-content">
-    <div class="modal-header">
-        <h4 class="modal-title" id="detailsModalLabel-@place.id">@place.name</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div class="modal-body">
-        <h5>@place.country, @place.location</h5>
-        <h6 class="mt-2">Rating: @place.rating</h6>
-        <p>@place.description</p>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        @if(isLoggedIn) {
-        <a href="@routes.PlaceController.editPlace(place)" class="btn btn-info">Edit  <i class="fas fa-pencil-alt"></i></a>
-        }
-    </div>
-    </div>
-</div>
-</div>
+@*@(place: Place, isLoggedIn: Boolean)*@
+@*<div class="modal fade" id="detailsModal-@place.id" tabindex="-1" role="dialog" aria-labelledby="detailsModalLabel-@place.id" aria-hidden="true">*@
+@*<div class="modal-dialog" role="document">*@
+    @*<div class="modal-content">*@
+    @*<div class="modal-header">*@
+        @*<h4 class="modal-title" id="detailsModalLabel-@place.id">@place.name</h4>*@
+        @*<button type="button" class="close" data-dismiss="modal" aria-label="Close">*@
+        @*<span aria-hidden="true">&times;</span>*@
+        @*</button>*@
+    @*</div>*@
+    @*<div class="modal-body">*@
+        @*<h5>@place.country, @place.location</h5>*@
+        @*<h6 class="mt-2">Rating: @place.rating</h6>*@
+        @*<p>@place.description</p>*@
+    @*</div>*@
+    @*<div class="modal-footer">*@
+        @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*@
+        @*@if(isLoggedIn) {*@
+        @*<a href="@routes.PlaceController.editPlace(place)" class="btn btn-info">Edit  <i class="fas fa-pencil-alt"></i></a>*@
+        @*}*@
+    @*</div>*@
+    @*</div>*@
+@*</div>*@
+@*</div>*@
