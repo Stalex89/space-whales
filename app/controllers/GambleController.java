@@ -5,10 +5,7 @@ import play.mvc.Result;
 
 public class GambleController extends Controller
 {
-    public Result gamble()
-    {
-        return TODO;
-    }
+    public Result gamble() { return TODO; }
 
     public Result chest()
     {

@@ -2,6 +2,12 @@ package models;
 
 import play.data.validation.Constraints;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Tshirt
 {
     enum Size
@@ -18,6 +24,7 @@ public class Tshirt
     {
         Male,
         Female,
+        Unisex,
     };
 
     enum Rarity
@@ -29,7 +36,8 @@ public class Tshirt
         Superb,
     };
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     Size size;
     Gender gender;
