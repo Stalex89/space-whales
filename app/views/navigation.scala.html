@@ -1,18 +1,16 @@
 @(isLoggedIn: Boolean, userInfo: UserInfo)
-
-<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #8699d1;">
-    <a class="navbar-brand" href="@routes.PlaceController.index()">PlacePlacer</a>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="@routes.PlaceController.about()">About</a>
-            </li>
-            @if(isLoggedIn) {
-                <li class="nav-item"><p class="navbar-text">@userInfo.getEmail()</p></li>
-                <li class="nav-item"><a class="nav-link" href="@routes.PlaceController.logout()">Logout</a></li>
-              } else {
-                <li class="nav-item"><a class="nav-link" href="@routes.PlaceController.login()">Login</a></li>
-              }
-        </ul>
+<div class="row">
+    <div class="logo">
+        <img src="@routes.Assets.at("img/space-whales-logo.png")">
     </div>
-</nav>
+    <ul class="main-nav">
+        <li><a href="@routes.HomeController.index()">Home</a></li>
+        <li><a href="@routes.HomeController.contact()">Contact</a></li>
+        @if(isLoggedIn) {
+            <li class="active"><a href="@routes.HomeController.profile()">MY ACCOUNT</a></li>
+        } else {
+            <li><a href="@routes.HomeController.login()">Login</a></li>
+            <li class="active"><a href="@routes.HomeController.register()">REGISTER</a></li>
+        }
+    </ul>
+</div>

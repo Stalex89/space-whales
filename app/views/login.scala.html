@@ -1,7 +1,7 @@
 @(title: String, isLoggedIn: Boolean, userInfo: UserInfo, loginForm: Form[views.formdata.LoginFormData])
 
 @main(title, isLoggedIn, userInfo) {
-   <div class="container">
-     @loginform(routes.PlaceController.postLogin(), loginForm("email"), loginForm("password"))
-   </div>
+  <div class="loginbox">
+    @loginform(routes.HomeController.postLogin(), loginForm("email"), loginForm("password"))
+  </div>
 }

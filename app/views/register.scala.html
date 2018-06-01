@@ -1,0 +1,14 @@
+@(isLoggedIn: Boolean, userInfo: UserInfo)
+
+@main("Register", isLoggedIn, userInfo) {
+    <div class="registerbox">
+        <img src="@routes.Assets.at("img/avatar.png")" class="avatar">
+        <h1>Register</h1>
+        <form>
+            <input type="mail" name="" placeholder="Email">
+            <input type="password" name="" placeholder="Password">
+            <input type="password" name="" placeholder="Password again">
+            <input type="submit" name="" value="Create Account">
+        </form>
+    </div>
+}
