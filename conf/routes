@@ -3,33 +3,19 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.PlaceController.index()
-GET     /about                      controllers.PlaceController.about()
-GET     /places/                    controllers.PlaceController.places()
-GET     /places/add                 controllers.PlaceController.addPlace()
-POST    /places/add                 controllers.PlaceController.save()
-GET     /place/:id                  controllers.PlaceController.details(id: models.Place)
-GET     /place/:id/edit             controllers.PlaceController.editPlace(id: models.Place)
-GET     /place/:id/picture          controllers.PlaceController.picture(id: models.Place)
+GET     /                           controllers.HomeController.showcase()
+GET     /chests                     controllers.HomeController.index()
+GET     /bundle                     controllers.HomeController.bundle()
+GET     /contact                     controllers.HomeController.contact()
 
-GET     /login                      controllers.PlaceController.login()
+GET     /register                   controllers.HomeController.register()
+GET     /login                      controllers.HomeController.login()
 
 +nocsrf
-POST    /login                      controllers.PlaceController.postLogin()
-GET     /profile                    controllers.PlaceController.profile()
-GET     /logout                     controllers.PlaceController.logout()
+POST    /login                      controllers.HomeController.postLogin()
+GET     /profile                    controllers.HomeController.profile()
+GET     /logout                     controllers.HomeController.logout()
 
-
-
-
-+nocsrf
-POST    /place/:id/incrRating       controllers.PlaceController.incrRating(id: models.Place)
-
-+nocsrf
-POST    /place/:id/decrRating       controllers.PlaceController.decrRating(id: models.Place)
-
-+nocsrf
-DELETE  /place/:id   controllers.PlaceController.delete(id:Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file      controllers.Assets.at(path="/public", file)
