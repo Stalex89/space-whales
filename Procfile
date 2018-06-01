@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/place-placer -Dhttp.port=${PORT}
+web: target/universal/stage/bin/spacewhales -Dhttp.port=${PORT}
