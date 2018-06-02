@@ -41,6 +41,10 @@ public class HomeController extends Controller {
         return ok(showcase.render());
     }
 
+    public Result chest() {
+        return ok(chest.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
+    }
+
 
     /**
      * Provides the Login page (only to unauthenticated users).

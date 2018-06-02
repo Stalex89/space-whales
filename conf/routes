@@ -4,9 +4,10 @@
 
 # Home page
 GET     /                           controllers.HomeController.showcase()
-GET     /chests                     controllers.HomeController.index()
+GET     /bundles                    controllers.HomeController.index()
 GET     /bundle                     controllers.HomeController.bundle()
-GET     /contact                     controllers.HomeController.contact()
+GET     /chest                      controllers.HomeController.chest()
+GET     /contact                    controllers.HomeController.contact()
 
 GET     /register                   controllers.HomeController.register()
 GET     /login                      controllers.HomeController.login()
