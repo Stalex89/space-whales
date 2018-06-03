@@ -8,6 +8,7 @@
 
 @*@(reverseRoute: play.api.mvc.Call, emailField: Field, passwordField: Field)*@
 
+<<<<<<< HEAD
 @*<div class="row">*@
   @*<div class="col-sm-4 col-sm-offset-4">*@
     @*<div class="panel panel-default">*@
@@ -35,3 +36,16 @@
     @*</div>*@
   @*</div>*@
 @*</div>*@
+=======
+<img src="@routes.Assets.at("img/avatar.png")" class="avatar">
+<h1>Login</h1>
+@helper.form(reverseRoute, 'role -> "form") {
+  <form>
+    <input type="text" value="@emailField.value.getOrElse("")" id="@emailField.id" name="@emailField.name" placeholder="Email">
+    <input type="password" id="@passwordField.id" name="@passwordField.name" value="@passwordField.value.getOrElse("")" placeholder="Password">
+    <input type="submit" value="Login">
+    <a href="#">Forgot your password?</a><br>
+    <a href="@routes.HomeController.register()">Don't have account?</a>
+  </form>
+}
+>>>>>>> master

@@ -1,4 +1,4 @@
-name := """place-placer"""
+name := """spacewhales"""
 
 version := "1.0-SNAPSHOT"
 

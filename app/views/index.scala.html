@@ -1,0 +1,12 @@
+@(isLoggedIn: Boolean, userInfo: UserInfo)
+
+@main("Chests", isLoggedIn, userInfo) {
+    <div id="ParentDiv">
+        <a href="@routes.HomeController.bundle()"><div id="Div1">1st chest here</div></a>
+        <a href="#"><div id="Div2">2nd chest here</div></a>
+        <a href="#"><div id="Div3">3rd chest here</div></a>
+        <a href="#"><div id="Div4">4th chest here</div></a>
+        <a href="#"><div id="Div5">5th chest here</div></a>
+        <a href="#"><div id="Div6">6th chest here</div></a>
+    </div>
+}

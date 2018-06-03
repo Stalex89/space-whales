@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @*@(isLoggedIn: Boolean, userInfo: UserInfo)*@
 
 @*<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #8699d1;">*@
@@ -16,3 +17,21 @@
         @*</ul>*@
     @*</div>*@
 @*</nav>*@
+=======
+@(isLoggedIn: Boolean, userInfo: UserInfo)
+<div class="row">
+    <div class="logo">
+        <img src="@routes.Assets.at("img/space-whales-logo.png")">
+    </div>
+    <ul class="main-nav">
+        <li><a href="@routes.HomeController.index()">Home</a></li>
+        <li><a href="@routes.HomeController.contact()">Contact</a></li>
+        @if(isLoggedIn) {
+            <li class="active"><a href="@routes.HomeController.profile()">MY ACCOUNT</a></li>
+        } else {
+            <li><a href="@routes.HomeController.login()">Login</a></li>
+            <li class="active"><a href="@routes.HomeController.register()">REGISTER</a></li>
+        }
+    </ul>
+</div>
+>>>>>>> master
