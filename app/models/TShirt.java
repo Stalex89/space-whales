@@ -1,6 +1,6 @@
 package models;
 
-
+import play.mvc.PathBindable;
 import play.libs.F;
 import java.util.*;
 import play.data.format.*;
@@ -9,23 +9,8 @@ import javax.persistence.*;
 import io.ebean.*;
 
 @Entity
-public class TShirt extends Model
+public class TShirt extends Model  implements PathBindable<TShirt> 
 {
-    enum Size
-    {
-        XS,
-        S,
-        M,
-        L,
-        XL,
-        XXL,
-    };
-
-    enum Gender
-    {
-        Male,
-        Female,
-    };
 
     enum Rarity
     {
@@ -44,12 +29,6 @@ public class TShirt extends Model
     public String name;
 
     @Constraints.Required
-    public Size size;
-
-    @Constraints.Required
-    public Gender gender;
-
-    @Constraints.Required
     public Rarity rarity;
 
     public String pictureUrl;
@@ -58,18 +37,32 @@ public class TShirt extends Model
 
     public TShirt(){}
 
-    public TShirt(Size size, String name, Gender gender, Rarity rarity, String description)
+    public TShirt(String name, Rarity rarity, String description)
     {
         this.name = name;
-        this.size = size;
-        this.gender = gender;
         this.rarity = rarity;
         pictureUrl = "";
         this.description = description;
     }
 
     public String toString() {
-        return String.format("%s - %s - %s - %s - %s\\n", name, size, gender, rarity, description);
+        return String.format("%s - %s - %s\\n", name, rarity, description);
+    }
+
+    // implementation of Pathbinding
+    @Override
+    public TShirt bind(String key, String value) {
+        return findById(Long.parseLong(value));
+    }
+    
+    @Override
+    public String unbind(String key) {
+        return "" + this.id;
+    }
+    
+    @Override
+    public String javascriptUnbind() {
+        return "" + this.id;
     }
 
     // implementation of data access

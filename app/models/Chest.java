@@ -1,5 +1,6 @@
 package models;
 
+import play.mvc.PathBindable;
 import java.math.BigDecimal;
 import play.libs.F;
 import java.util.*;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 import io.ebean.*;
 
 @Entity
-public class Chest extends Model
+public class Chest extends Model implements PathBindable<Chest> 
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,6 +44,23 @@ public class Chest extends Model
         return String.format("%s - %s - %s\\n", name, price, description);
     }
 
+   // implementation of Pathbinding
+   @Override
+   public Chest bind(String key, String value) {
+       return findById(Long.parseLong(value));
+   }
+   
+   @Override
+   public String unbind(String key) {
+       return "" + this.id;
+   }
+   
+   @Override
+   public String javascriptUnbind() {
+       return "" + this.id;
+   }
+
+
     // implementation of data access
     public static List<Chest> findAll() {
     return find.all();
@@ -54,7 +72,7 @@ public class Chest extends Model
         return find.query().where().eq("id", id).findOne();
     }
 
-    public static void remove(Chest tShirt) {
-        tShirt.delete();
+    public static void remove(Chest chest) {
+        chest.delete();
     }
 }
