@@ -4,9 +4,9 @@
 
 # Home page
 GET     /                           controllers.HomeController.showcase()
-GET     /bundles                    controllers.HomeController.index()
-GET     /bundle                     controllers.GambleController.bundle()
-GET     /chest                      controllers.GambleController.chest()
+GET     /chests                    controllers.HomeController.index()
+GET     /chest                     controllers.GambleController.chest()
+GET     /roulette                      controllers.GambleController.roulette()
 GET     /contact                    controllers.HomeController.contact()
 
 GET     /register                   controllers.HomeController.register()

@@ -9,11 +9,11 @@ import java.io.*;
 
 public class GambleController extends Controller
 {
-    public Result bundle() {
-        return ok(bundle.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
-    }
-
     public Result chest() {
         return ok(chest.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
+    }
+
+    public Result roulette() {
+        return ok(roulette.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
     }
 }

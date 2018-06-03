@@ -25,8 +25,6 @@ public class HomeController extends Controller {
         return ok(index.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
     }
 
-
-
     public Result contact() {
         return ok(contact.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
     }
