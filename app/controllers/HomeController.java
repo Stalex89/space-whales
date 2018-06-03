@@ -1,17 +1,5 @@
 package controllers;
 
-<<<<<<< HEAD
-import play.mvc.Controller;
-import play.mvc.Result;
-
-public class HomeController extends Controller
-{
-    public Result index ()
-    {
-        return ok("This is the main page for Space whales project");
-    }
-}
-=======
 import models.Place;
 import views.html.*;
 import play.*;
@@ -119,4 +107,3 @@ public class HomeController extends Controller {
     }
 
 }
->>>>>>> master

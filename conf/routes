@@ -3,7 +3,6 @@
 # ~~~~
 
 # Home page
-<<<<<<< HEAD
 
 
 GET     /                           controllers.HomeController.index
@@ -38,7 +37,6 @@ GET     /                           controllers.HomeController.index
 #+nocsrf
 #DELETE  /place/:id   controllers.PlaceController.delete(id:Long)
 
-=======
 GET     /                           controllers.HomeController.showcase()
 GET     /bundles                    controllers.HomeController.index()
 GET     /bundle                     controllers.HomeController.bundle()
@@ -54,7 +52,6 @@ GET     /profile                    controllers.HomeController.profile()
 GET     /logout                     controllers.HomeController.logout()
 
 
->>>>>>> master
 # Map static resources from the /public folder to the /assets URL path
 #GET     /assets/*file      controllers.Assets.at(path="/public", file)
 #->      /webjars           webjars.Routes
