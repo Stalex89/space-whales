@@ -52,7 +52,7 @@ public class TShirt extends Model
     @Constraints.Required
     public Rarity rarity;
 
-    public byte[] picture;
+    public String pictureUrl;
 
     public String description;
 
@@ -64,7 +64,7 @@ public class TShirt extends Model
         this.size = size;
         this.gender = gender;
         this.rarity = rarity;
-        picture = null;
+        pictureUrl = "";
         this.description = description;
     }
 
