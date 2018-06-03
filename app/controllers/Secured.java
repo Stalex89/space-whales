@@ -72,8 +72,4 @@ public class Secured extends Security.Authenticator {
   public static UserInfo getUserInfo(Context ctx) {
     return (isLoggedIn(ctx) ? UserInfoDB.getUser(getUser(ctx)) : null);
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> parent of 2f711f6... Merge commit
