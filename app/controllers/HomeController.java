@@ -1,6 +1,6 @@
 package controllers;
 
-import models.Place;
+import models.Chest;
 import views.html.*;
 import play.*;
 import play.data.*;
@@ -22,7 +22,8 @@ public class HomeController extends Controller {
     FormFactory formFactory;
 
     public Result index() {
-        return ok(index.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
+        List<Chest> allChests = Chest.findAll();
+        return ok(index.render(allChests, Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
     }
 
     public Result contact() {
