@@ -25,10 +25,6 @@ public class HomeController extends Controller {
         return ok(index.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
     }
 
-    public Result bundle() {
-        return ok(bundle.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
-    }
-
     public Result contact() {
         return ok(contact.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
     }
@@ -41,9 +37,7 @@ public class HomeController extends Controller {
         return ok(showcase.render());
     }
 
-    public Result chest() {
-        return ok(chest.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
-    }
+
 
 
     /**
