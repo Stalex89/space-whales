@@ -5,8 +5,8 @@
 # Home page
 GET     /                           controllers.HomeController.showcase()
 GET     /bundles                    controllers.HomeController.index()
-GET     /bundle                     controllers.HomeController.bundle()
-GET     /chest                      controllers.HomeController.chest()
+GET     /bundle                     controllers.GambleController.bundle()
+GET     /chest                      controllers.GambleController.chest()
 GET     /contact                    controllers.HomeController.contact()
 
 GET     /register                   controllers.HomeController.register()
