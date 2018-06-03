@@ -9,8 +9,8 @@ import java.io.*;
 
 public class GambleController extends Controller
 {
-    public Result chest() {
-        return ok(chest.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
+    public Result chest(Chest chest) {
+        return ok(chest.render(chest, Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
     }
 
     public Result roulette() {
