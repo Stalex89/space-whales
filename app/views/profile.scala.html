@@ -1,8 +1,8 @@
-@*@(page: String, isLoggedIn: Boolean, userInfo: UserInfo)*@
+@(page: String, isLoggedIn: Boolean, userInfo: UserInfo)
 
-@*@main(page, isLoggedIn, userInfo) {*@
-   @*<div class="container">*@
-     @*<p>In the profile page.</p> *@
-     @*<p>Only authenticated users can visit this page.  Try logging out and then attempting to retrieve /profile.</p>*@
-   @*</div>*@
-@*}*@
+@main(page, isLoggedIn, userInfo) {
+   <div class="container">
+     <p>In the profile page.</p> 
+     <p>Only authenticated users can visit this page.  Try logging out and then attempting to retrieve /profile.</p>
+   </div>
+}

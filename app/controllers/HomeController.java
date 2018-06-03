@@ -106,4 +106,8 @@ public class HomeController extends Controller {
         return ok(profile.render("profile", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> parent of 2f711f6... Merge commit
