@@ -6,7 +6,8 @@
 GET     /                           controllers.HomeController.showcase()
 GET     /chests                     controllers.HomeController.index()
 GET     /chest/:id                  controllers.GambleController.chest(id : models.Chest)
-GET     /roulette                   controllers.GambleController.roulette()
+GET     /chest/:id/open             controllers.GambleController.openChest(id : models.Chest)
+GET     /roll-the-dice              controllers.GambleController.rollTheDice()
 GET     /contact                    controllers.HomeController.contact()
 
 GET     /register                   controllers.HomeController.register()

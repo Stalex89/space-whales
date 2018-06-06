@@ -1,10 +1,18 @@
 @(chest: Chest, isLoggedIn: Boolean, userInfo: UserInfo)
 
 @main("Bundle 1", isLoggedIn, userInfo) {
-    <div id="ParentDiv">
-        <a href="@routes.GambleController.roulette()"><div id="Div1">1 chest - 25$ </div></a>
-        <a href="#"><div id="Div2">2 chests - 45$</div></a>
-        <a href="#"><div id="Div3">5 chests  - 100$ </div></a>
-        <a href="#"><div id="Div4">10 chests  - 180$ </div></a>
+    <div class="box">
+        <h1>@chest.name</h1>
+        <p>Description:<br>@chest.description</p>
+        <br>
+        <p>Price: @chest.price USD</p>
+        <br>
+        <p>Contents:</p><br>
+        <ul>
+        @for(tshirt <- chest.tShirts) {
+            <li>@tshirt.name</li>
+        }
+        </ul>
+        <button><a href="@routes.GambleController.openChest(chest)">Test your luck!</a></button>
     </div>
 }

@@ -35,12 +35,25 @@ li {
 }
 
 .list li {
-border: 4px solid transparent ;
+border: 4px solid #fff ;
+margin: 0;
+padding: 0;
 }
 .list li img {
     width: 130px;
     height: 130px;
+    margin: 0;
+    padding: 0;
 }
+
+.list li div {
+    width: 130px;
+    height: 130px;
+    margin: 0;
+    padding: 0;
+}
+
+
 
 .arrowup {
     position: absolute;

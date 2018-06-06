@@ -17,13 +17,13 @@ public class Chest extends Model implements PathBindable<Chest>
     public Long id;
 
     @Constraints.Required
-    String name;
+    public String name;
 
     @ManyToMany(cascade = CascadeType.ALL)
     public List<TShirt> tShirts = new ArrayList<TShirt>();
 
     @Constraints.Required
-    BigDecimal price;
+    public BigDecimal price;
 
     public String pictureUrl;
 
@@ -41,7 +41,7 @@ public class Chest extends Model implements PathBindable<Chest>
     }
 
     public String toString() {
-        return String.format("%s - %s - %s\\n", name, price, description);
+        return String.format("%s - %s - %s", name, price, description);
     }
 
    // implementation of Pathbinding

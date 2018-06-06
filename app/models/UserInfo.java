@@ -1,5 +1,6 @@
 package models;
 
+import java.util.*;
 /**
  * A simple representation of a user. 
  * @author Philip Johnson
@@ -9,6 +10,7 @@ public class UserInfo {
   private String name;
   private String email;
   private String password;
+  private List<TShirt> tshirtsWon;
   
   /**
    * Creates a new UserInfo instance.
@@ -20,6 +22,7 @@ public class UserInfo {
     this.name = name;
     this.email = email;
     this.password = password;
+    tshirtsWon = new ArrayList<TShirt>();
   }
   
   /**
@@ -57,6 +60,10 @@ public class UserInfo {
    */
   public void setPassword(String password) {
     this.password = password;
+  }
+
+  public List<TShirt> getTShirtsWon() {
+    return this.tshirtsWon;
   }
 
 }

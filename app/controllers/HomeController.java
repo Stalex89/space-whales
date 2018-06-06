@@ -39,8 +39,6 @@ public class HomeController extends Controller {
     }
 
 
-
-
     /**
      * Provides the Login page (only to unauthenticated users).
      * 
