@@ -1,0 +1,12 @@
+@(tshirts: List[TShirt], isLoggedIn: Boolean, userInfo: UserInfo)
+
+@main("My t-shirts", isLoggedIn, userInfo) {
+  <div class="box">
+    <h1>My t-shirts</h1>
+    <ul>
+    @for(tshirt <- tshirts) {
+        <li>@tshirt.name</li>
+    }
+    </ul>
+</div>
+}

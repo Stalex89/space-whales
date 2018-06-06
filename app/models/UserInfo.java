@@ -66,4 +66,8 @@ public class UserInfo {
     return this.tshirtsWon;
   }
 
+  public boolean addWonTShirt(TShirt ts) {
+    return this.tshirtsWon.add(ts);
+  } 
+
 }

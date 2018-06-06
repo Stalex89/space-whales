@@ -7,7 +7,7 @@ GET     /                           controllers.HomeController.showcase()
 GET     /chests                     controllers.HomeController.index()
 GET     /chest/:id                  controllers.GambleController.chest(id : models.Chest)
 GET     /chest/:id/open             controllers.GambleController.openChest(id : models.Chest)
-GET     /roll-the-dice              controllers.GambleController.rollTheDice()
+GET     /chest/:id/roulette         controllers.GambleController.roulette(id : models.Chest)
 GET     /contact                    controllers.HomeController.contact()
 
 GET     /register                   controllers.HomeController.register()
@@ -16,6 +16,7 @@ GET     /login                      controllers.HomeController.login()
 +nocsrf
 POST    /login                      controllers.HomeController.postLogin()
 GET     /profile                    controllers.HomeController.profile()
+GET     /my-tshirts                 controllers.HomeController.userTSrirts()
 GET     /logout                     controllers.HomeController.logout()
 
 

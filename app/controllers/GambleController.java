@@ -3,11 +3,15 @@ package controllers;
 import views.html.*;
 import models.Chest;
 import models.TShirt;
+import models.UserInfo;
 import play.*;
+import play.libs.Json;
 import play.data.*;
 import play.mvc.*;
 import java.util.*;
 import java.io.*;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 public class GambleController extends Controller
 {
@@ -18,6 +22,10 @@ public class GambleController extends Controller
 
     @Security.Authenticated(Secured.class)
     public Result openChest(Chest ch) {
+        return ok(roulette.render(ch, Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
+    }
+
+    private List<TShirt> getRandomPoolFromChest(Chest ch) {
         List<TShirt> tshirts = new ArrayList<TShirt>();
         float sumRarity = 0;
         for (TShirt tshirt : ch.tShirts) {
@@ -26,7 +34,7 @@ public class GambleController extends Controller
         for (int i = 0; i < 100; i++) {
             tshirts.add(selectRandomWithDistribution(ch.tShirts, sumRarity));
         }
-        return ok(roulette.render(ch, tshirts, Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
+        return tshirts;
     }
 
     private TShirt selectRandomWithDistribution(List<TShirt> tshirts, float sumRarity) {
@@ -45,9 +53,20 @@ public class GambleController extends Controller
     }
 
     @Security.Authenticated(Secured.class)
-    public Result rollTheDice() {
+    public Result roulette(Chest ch) {
+        List<TShirt> tshirts = getRandomPoolFromChest(ch);
         Random rand = new Random();
         int  n = rand.nextInt(50) + 50;
-        return ok(n + "");
+        ObjectNode response = Json.newObject();
+        response.put("selected", n);
+        response.set("tshirts", Json.toJson(tshirts));
+        UserInfo ui = Secured.getUserInfo(ctx());
+        if (ui == null) {
+            System.out.println("user is null");
+        } else {
+            ui.addWonTShirt(tshirts.get(n));
+        }
+        return ok(response);
     }
+
 }

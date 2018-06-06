@@ -99,4 +99,9 @@ public class HomeController extends Controller {
         return ok(profile.render("profile", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
     }
 
+    @Security.Authenticated(Secured.class)
+    public Result userTSrirts() {
+        return ok(tshirts_list.render(Secured.getUserInfo(ctx()).getTShirtsWon(), Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
+    }
+
 }

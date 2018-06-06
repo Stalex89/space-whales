@@ -78,3 +78,14 @@ padding: 0;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
 }
+
+.tshirt-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.tshirt-container {
+    display:inline-table;
+    color: #fff;
+    text-align:center;
+}
