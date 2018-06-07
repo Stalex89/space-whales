@@ -89,3 +89,23 @@ padding: 0;
     color: #fff;
     text-align:center;
 }
+
+.Generic {
+    border: 4px solid #fff;
+}
+
+.Unusual {
+    border: 4px solid rgb(21, 255, 0);
+}
+
+.Rare {
+    border: 4px solid rgb(25, 0, 255);
+}
+
+.Epic {
+    border: 4px solid rgb(158, 0, 179);
+}
+
+.Superb {
+    border: 4px solid goldenrod;
+}

@@ -9,50 +9,8 @@ import javax.persistence.*;
 import io.ebean.*;
 
 @Entity
-public class TShirt extends Model  implements PathBindable<TShirt> 
+public class TShirt extends Model implements PathBindable<TShirt> 
 {
-
-    public enum Rarity
-    {
-        Generic,
-        Unusual,
-        Rare,
-        Epic,
-        Superb;
-
-        public float rarityCoeff() {
-            switch(this) {
-                case Generic:
-                    return 200;
-                case Unusual:
-                    return 100;
-                case Rare:
-                    return 50;
-                case Epic:
-                    return 10;
-                case Superb:
-                    return 5;
-            }
-            return 0;
-        }
-
-        public String toString() {
-            switch(this) {
-                case Generic:
-                    return "Generic";
-                case Unusual:
-                    return "Unusual";
-                case Rare:
-                    return "Rare";
-                case Epic:
-                    return "Epic";
-                case Superb:
-                    return "Superb";
-            }
-            return "Unknown";
-        }
-    };
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
