@@ -104,4 +104,38 @@ public class HomeController extends Controller {
         return ok(tshirts_list.render(Secured.getUserInfo(ctx()).getTShirtsWon(), Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
     }
 
+        /**
+     * Provides the editing account information page (only to authenticated users).
+     * 
+     * @return The accountinfo page.
+     */
+    @Security.Authenticated(Secured.class)
+    public Result accountinfo() {
+        return ok(accountinfo.render("profile", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
+    }
+
+
+
+    /**
+     * Provides the editing billing address page (only to authenticated users).
+     * 
+     * @return The billingaddress page.
+     */
+    @Security.Authenticated(Secured.class)
+    public Result billingaddress() {
+        return ok(billingaddress.render("profile", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
+    }
+
+
+
+    /**
+     * Provides the editing shipping address page (only to authenticated users).
+     * 
+     * @return The shippingaddress page.
+     */
+    @Security.Authenticated(Secured.class)
+    public Result shippingaddress() {
+        return ok(shippingaddress.render("profile", Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
+    }
+
 }

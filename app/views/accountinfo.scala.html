@@ -1,0 +1,14 @@
+@(page: String, isLoggedIn: Boolean, userInfo: UserInfo)
+
+@main(page, isLoggedIn, userInfo) {
+    <div class="myaccount1box">
+        <h1>My account</h1>
+       <form>
+           Edit Account Information
+           <input type="text" name="" placeholder="Email">
+           <input type="password" name="" placeholder="Password">
+           <input type="submit" name="" value="Save">
+           <button class="button"><a href="@routes.HomeController.profile()">Back</a></button>
+       </form> 
+    </div>
+}

@@ -1,0 +1,17 @@
+@(page: String, isLoggedIn: Boolean, userInfo: UserInfo)
+
+@main(page, isLoggedIn, userInfo) {
+    <div class="myaccount1box">
+        <h1>My account</h1>
+       <form>
+           Edit Shipping Address
+           <input type="text" name="" value = "Plac Grunwaldzki 11/9" placeholder="Address">
+           <input type="text" name="" value = "67-200" placeholder="Postal code">
+           <input type="text" name="" value = "Poland" placeholder="Country">
+           <input type="text" name="" value = "Wrocław" placeholder="City">
+           <input type="text" name="" value = "dolnoslaskie" placeholder="Province">
+           <input type="submit" name="" value="Save">
+           <button class="button"><a href="@routes.HomeController.profile()">Back</a></button>
+       </form> 
+    </div>
+}

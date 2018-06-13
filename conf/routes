@@ -16,6 +16,9 @@ GET     /login                      controllers.HomeController.login()
 +nocsrf
 POST    /login                      controllers.HomeController.postLogin()
 GET     /profile                    controllers.HomeController.profile()
+GET     /accountinfo                controllers.HomeController.accountinfo()
+GET     /billingaddress             controllers.HomeController.billingaddress()
+GET     /shippingaddress            controllers.HomeController.shippingaddress()
 GET     /my-tshirts                 controllers.HomeController.userTSrirts()
 GET     /logout                     controllers.HomeController.logout()
 

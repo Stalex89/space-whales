@@ -3,9 +3,9 @@
 @main(page, isLoggedIn, userInfo) {
   <div class="box">
     <h1>My account</h1>
-   <button class="button"><a href="accountinfo.html">Change Account Information</a></button>
-   <button class="button"><a href="billingaddress.html">Change Billing address</a></button>
-   <button class="button"><a href="shippingaddress.html">Change Shipping Address</a></button>
+    <button class="button"><a href="@routes.HomeController.accountinfo()">Change Account Information</a></button>
+    <button class="button"><a href="@routes.HomeController.billingaddress()">Change Billing address</a></button>
+    <button class="button"><a href="@routes.HomeController.shippingaddress()">Change Shipping Address</a></button>
    <button class="button"><a href="@routes.HomeController.userTSrirts()">My t-shirts</a></button>   
 </div>
 }
