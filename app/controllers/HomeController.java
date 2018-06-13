@@ -21,6 +21,41 @@ public class HomeController extends Controller {
     @Inject
     FormFactory formFactory;
 
+    public Result success() {
+        UserInfo us = Secured.getUserInfo(ctx());
+        if (Secured.isLoggedIn(ctx()) && us != null) {
+            Chest ch = us.finishBuyingChest();
+            if (ch != null) {
+                System.out.println("success: play!");
+                us.startPlayingRoulette(ch);
+                return redirect(routes.GambleController.openChest(ch));
+            }
+            System.out.println("success: no chest!");
+        } else {
+            System.out.println("success: not logged in!");
+        }
+        return redirect(routes.HomeController.index());
+    }
+
+    public Result cancel() {
+        UserInfo us = Secured.getUserInfo(ctx());
+        if (Secured.isLoggedIn(ctx()) && us != null) {
+            us.finishBuyingChest();
+        }
+        return redirect(routes.HomeController.index());
+    }
+
+    public Result startBuying(Chest ch) {
+        UserInfo us = Secured.getUserInfo(ctx());
+        if (Secured.isLoggedIn(ctx()) && us != null) {
+            System.out.println("started buying chest " + ch.id);
+            us.startBuyingChest(ch);
+            return ok("started buying chest " + ch.id);
+        }
+        System.out.println("startBuying: not logged in!");
+        return badRequest("/login");
+    }
+
     public Result index() {
         List<Chest> allChests = Chest.findAll();
         return ok(index.render(allChests, Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));

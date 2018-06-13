@@ -7,6 +7,7 @@ create table chest (
   id                            bigint auto_increment not null,
   name                          varchar(255),
   price                         decimal(38),
+  product_id                    varchar(255),
   picture_url                   varchar(255),
   description                   varchar(255),
   constraint pk_chest primary key (id)
