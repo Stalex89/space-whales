@@ -25,18 +25,22 @@ public class Chest extends Model implements PathBindable<Chest>
     @Constraints.Required
     public BigDecimal price;
 
+    @Constraints.Required
+    public String productId;
+
     public String pictureUrl;
 
     public String description;
 
 
     public Chest(){}
-    public Chest(String name, List<TShirt> tShirts, BigDecimal price, String description)
+    public Chest(String name, List<TShirt> tShirts, BigDecimal price, String productId, String pictureUrl, String description)
     {
         this.name = name;
         this.tShirts = tShirts;
         this.price = price;
-        pictureUrl = "";
+        this.productId = productId;
+        this.pictureUrl = pictureUrl;
         this.description = description;
     }
 

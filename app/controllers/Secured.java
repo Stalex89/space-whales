@@ -61,7 +61,7 @@ public class Secured extends Security.Authenticator {
    * @return True if user is logged in.
    */
   public static boolean isLoggedIn(Context ctx) {
-    return (getUser(ctx) != null);
+    return (getUser(ctx) != null &&  UserInfoDB.getUser(getUser(ctx)) != null);
   }
   
   /**

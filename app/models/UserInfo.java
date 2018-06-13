@@ -10,6 +10,8 @@ public class UserInfo {
   private String name;
   private String email;
   private String password;
+  private Chest buyingChest;
+  private Chest playingChest;
   private List<TShirt> tshirtsWon;
   
   /**
@@ -22,7 +24,9 @@ public class UserInfo {
     this.name = name;
     this.email = email;
     this.password = password;
-    tshirtsWon = new ArrayList<TShirt>();
+    this.buyingChest = null;
+    this.playingChest = null;
+    this.tshirtsWon = new ArrayList<TShirt>();
   }
   
   /**
@@ -68,6 +72,30 @@ public class UserInfo {
 
   public boolean addWonTShirt(TShirt ts) {
     return this.tshirtsWon.add(ts);
+  } 
+
+  public boolean startBuyingChest(Chest ch) {
+
+    this.buyingChest = ch;
+    return true;
+  } 
+
+  public Chest finishBuyingChest() {
+    Chest ch = this.buyingChest;
+    this.buyingChest = null;
+    return ch;
+  } 
+
+  public boolean startPlayingRoulette(Chest ch) {
+
+    this.playingChest  = ch;
+    return true;
+  } 
+
+  public Chest finishPlayingRoulette() {
+    Chest ch = this.playingChest;
+    this.playingChest = null;
+    return ch;
   } 
 
 }

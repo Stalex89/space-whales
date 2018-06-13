@@ -22,6 +22,7 @@ public class GambleController extends Controller
 
     @Security.Authenticated(Secured.class)
     public Result openChest(Chest ch) {
+        System.out.println("Opening chest " + ch);
         return ok(roulette.render(ch, Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
     }
 
@@ -54,19 +55,27 @@ public class GambleController extends Controller
 
     @Security.Authenticated(Secured.class)
     public Result roulette(Chest ch) {
-        List<TShirt> tshirts = getRandomPoolFromChest(ch);
-        Random rand = new Random();
-        int  n = rand.nextInt(50) + 50;
-        ObjectNode response = Json.newObject();
-        response.put("selected", n);
-        response.set("tshirts", Json.toJson(tshirts));
         UserInfo ui = Secured.getUserInfo(ctx());
         if (ui == null) {
-            System.out.println("user is null");
+            System.out.println("roulette: user is null");
         } else {
-            ui.addWonTShirt(tshirts.get(n));
+            System.out.println("roulette: user is finishing to play roulette!");
+            Chest uiChest = ui.finishPlayingRoulette();
+            if (uiChest.id == ch.id) {
+                System.out.println("roulette: yay!");
+                List<TShirt> tshirts = getRandomPoolFromChest(ch);
+                Random rand = new Random();
+                int  n = rand.nextInt(50) + 50;
+                ObjectNode response = Json.newObject();
+                response.put("selected", n);
+                response.set("tshirts", Json.toJson(tshirts));
+                ui.addWonTShirt(tshirts.get(n));
+                return ok(response);
+            } else {
+                System.out.println("roulette: chest = " + ch.id + "; uiChest = " + uiChest.id);
+            }
         }
-        return ok(response);
+        return badRequest("/chest/" + ch.id);
     }
 
 }
