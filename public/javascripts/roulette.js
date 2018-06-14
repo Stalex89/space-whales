@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#test').click(function() {
+    $('#test').click(function () {
         $('.list').empty()
         $.get($(this).attr('data-url'), (res) => {
 
@@ -10,9 +10,10 @@ $(document).ready(function () {
                 //   <span class="tshirt-cell" >${tshirt.name}</span>                       
                 // </div></li>`)
                 const $li = $('<li></li>')
-                $li.addClass(tshirt.rarity)
+                $li.addClass(tshirt.rarity.toLowerCase())
 
                 $li.append(`<img src="${tshirt.pictureUrl}">`)
+
                 $('.list').append($li)
             })
 
@@ -20,14 +21,20 @@ $(document).ready(function () {
                 right: "0"
             })
             const x = parseInt(res.selected)
+
             $('.window').animate({
-                right: (x*(130 + 16) - 145)
+                right: (x * (256 + 8) - 256)
             }, 10000, 'swing', () => {
-                alert(`Congratulations! You have won the "${res.tshirts[x].name}" T-shirt`)
-                location.replace("/my-tshirts")
+                $('.list li:eq(' + x + ')').css({
+                    border: '8px solid goldenrod'
+                })
+                setTimeout(() => {
+                    alert(`Congratulations! You have won the "${res.tshirts[x].name}"!`)
+                    location.replace("/my-tshirts")
+                }, 500)           
             })
         }).fail((redirectUrl) => {
-            location.replace(redirectUrl)
+            location.replace(redirectUrl.responseText)
         })
     })
 });

@@ -1,0 +1,12 @@
+@(ts: TShirt, isLoggedIn: Boolean, userInfo: UserInfo)
+
+@main(ts.name, isLoggedIn, userInfo) {
+    <div class="box">
+        <img style="width: 100%; max-height: 300px;" src="@ts.pictureUrl">
+        <h1>@ts.name</h1>
+        <p>Description:<br>@ts.description</p>
+        <br>
+        <p>Rarity: @ts.rarity</p>
+        <br>
+    </div>
+}

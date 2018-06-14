@@ -45,6 +45,7 @@ public class HomeController extends Controller {
         return redirect(routes.HomeController.index());
     }
 
+    @Security.Authenticated(Secured.class)
     public Result startBuying(Chest ch) {
         UserInfo us = Secured.getUserInfo(ctx());
         if (Secured.isLoggedIn(ctx()) && us != null) {

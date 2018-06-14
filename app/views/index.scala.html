@@ -1,9 +1,11 @@
 @(chests: List[Chest], isLoggedIn: Boolean, userInfo: UserInfo)
 
 @main("Chests", isLoggedIn, userInfo) {
-    <div id="ParentDiv">
+    <div style="margin-top: 200px;margin-left: 64px;" id="ParentDiv">
         @for(chest <- chests ) {
-            <a href="@routes.GambleController.chest(chest)"><div id="Div1">Chest: @chest.name</div></a>
+            <a href="@routes.GambleController.chest(chest)"><div id="Div1"><h3>@chest.name</h3>
+                <img style="max-width: 100%; max-height: 175px;"src="@chest.pictureUrl">
+            </div></a>
         }
     </div>
 }

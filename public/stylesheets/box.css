@@ -31,16 +31,7 @@
 }
 
 .box a {
-    width: 100%;
-    border:none;
-    border-bottom: none;
-    text-decoration: none;
-    outline:none;
-    height: 40px;
-    background: #fb2525;
     color: #fff;
-    font-size: 18px;
-    border-radius: 20px;
 }
 
 .box button {
@@ -56,6 +47,13 @@
 }
 
 .box button:hover{
-    color: #ffc107;
-    
+    cursor: pointer;
+    background: #ffc107;
+    color:#000;
+}
+
+
+.box input[type="image"]
+{
+    margin-top: 50px;
 }
